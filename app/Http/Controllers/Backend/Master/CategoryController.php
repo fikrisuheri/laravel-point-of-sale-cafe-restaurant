@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Backend\Master;
 
-use App\DataTables\CategoryDatatable;
+use App\DataTables\Master\CategoryDatatable;
+use App\DataTables\Scopes\CategoryScope;
 use App\Http\Controllers\Controller;
 use App\Models\Master\Category;
 use App\Repositories\BaseRepository;
@@ -58,5 +59,11 @@ class CategoryController extends Controller
     {
         $data['category'] = $this->category->find($id);
         return view('backend.master.category.show',compact('data'));
+    }
+
+    public function restore($id)
+    {
+        $this->category->restoretrash($id);
+        return redirect()->route('master.category.index')->with('success',__('message.restore'));
     }
 }

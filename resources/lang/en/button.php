@@ -9,4 +9,5 @@ return [
     'cancel'            => 'Cancel',
     'select'            => 'Select',
     'back'              => 'Back',
+    'restore'           => 'Restore'
 ];

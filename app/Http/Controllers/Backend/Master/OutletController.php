@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Master;
 
-use App\DataTables\OutletDatatable;
+use App\DataTables\Master\OutletDatatable;
 use App\Http\Controllers\Controller;
 use App\Models\Master\Outlet;
 use App\Repositories\BaseRepository;

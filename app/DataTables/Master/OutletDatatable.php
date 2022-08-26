@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataTables;
+namespace App\DataTables\Master;
 
 use App\Models\Master\Outlet;
 use Yajra\DataTables\Html\Button;
@@ -11,7 +11,6 @@ use Yajra\DataTables\Services\DataTable;
 
 class OutletDatatable extends DataTable
 {
-   
     public function dataTable($query)
     {
         return datatables()

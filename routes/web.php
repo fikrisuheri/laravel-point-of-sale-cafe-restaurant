@@ -37,6 +37,7 @@ Route::prefix('app')->group(function () {
                 Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit');
                 Route::post('/update/{id}',[CategoryController::class,'update'])->name('update');
                 Route::get('/show/{id}',[CategoryController::class,'show'])->name('show');
+                Route::get('/restore/{id}',[CategoryController::class,'restore'])->name('restore');
             });
 
             Route::prefix('outlet')->name('outlet.')->group(function(){

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataTables;
+namespace App\DataTables\Master;
 
 use App\Models\Master\Category;
 use Yajra\DataTables\Html\Button;
@@ -11,14 +11,13 @@ use Yajra\DataTables\Services\DataTable;
 
 class CategoryDatatable extends DataTable
 {
-
     public function dataTable($query)
     {
         return datatables()
             ->eloquent($query)
             ->addColumn('action', function ($query) {
                 $data['action'] = $this->actions($query);
-                return view('components.actions.button-action', compact('data'))->render();
+                return view('components.actions.button-action', compact('data','query'))->render();
             })
             ->addColumn('foto', function ($query) {
                 return '<img src="' . $query->image_path . '" width="100">';
@@ -44,6 +43,11 @@ class CategoryDatatable extends DataTable
                 'icon'  => 'fa fa-trash',
                 'route' => route('master.category.delete', $id)
             ],
+            // [
+            //     'title' => __('button.restore'),
+            //     'icon'  => 'fa fa-undo',
+            //     'route' => route('master.category.restore', $id)
+            // ],
         ];
     }
 

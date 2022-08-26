@@ -9,4 +9,5 @@ return [
     'cancel'           => 'Batalkan',
     'select'           => 'Pilih',
     'back'             => 'Kembali',
+    'restore'          => 'Pulihkan'
 ];
