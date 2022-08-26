@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Master;
 
+use App\DataTables\CategoryDatatable;
 use App\Http\Controllers\Controller;
 use App\Models\Master\Category;
 use App\Repositories\BaseRepository;
@@ -15,10 +16,9 @@ class CategoryController extends Controller
         $this->category = new BaseRepository($category);
     }
 
-    public function index()
+    public function index(CategoryDatatable $datatable)
     {
-        $data['category'] = $this->category->get();
-        return view('backend.master.category.index',compact('data'));
+        return $datatable->render('backend.master.category.index');
     }
 
     public function create()
@@ -34,7 +34,7 @@ class CategoryController extends Controller
 
     public function delete($id)
     {
-        $this->category->hardDelete($id,true,'image');
+        $this->category->softDelete($id);
         return redirect()->back()->with('success',__('message.delete'));
     }
 

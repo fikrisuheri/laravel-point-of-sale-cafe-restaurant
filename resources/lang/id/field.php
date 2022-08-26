@@ -6,7 +6,7 @@ return [
     'join_at' => 'Bergabung',
     'slug' => 'Slug',
     'action' => 'Aksi',
-    'thumbnails' => 'Thumbnails',
+    'image' => 'Gambar',
     'created_at' => 'Dibuat',
     'price' => 'Harga',
     'description' => 'Deskripsi',
@@ -16,6 +16,10 @@ return [
 
     // Product
     'product_name' => 'Nama Produk',
+
+    // Otlet
+    'outlet_name' => 'Nama Toko',
+    'outlet_address' => 'Alamat Toko',
 
     // Order
     'order_invoice' => 'Invoice',

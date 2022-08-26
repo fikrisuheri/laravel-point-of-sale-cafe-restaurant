@@ -5,7 +5,7 @@ return [
     'category'          => 'Kategori',
     'product'           => 'Produk',
     'customer'          => 'Pelanggan',
-
+    'outlet'            => 'Toko',
 
     // Setting
 

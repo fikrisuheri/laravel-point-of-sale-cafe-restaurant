@@ -9,11 +9,12 @@
       <ul class="sidebar-menu">
           <li class="menu-header">Menu Admin</li>
           <li><a class="nav-link" href=""><i class="fas fa-tachometer-alt"></i> <span> {{ __('menu.dashboard') }}</span></a></li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown {{ request()->is('app/master*') ? 'active' : '' }}">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-table"></i><span>Master</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{ route('master.category.index') }}">{{ __('menu.category') }}</a></li>
               <li><a class="nav-link" href="">{{ __('menu.product') }}</a></li>
+              <li><a class="nav-link" href="{{ route('master.outlet.index') }}">{{ __('menu.outlet') }}</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

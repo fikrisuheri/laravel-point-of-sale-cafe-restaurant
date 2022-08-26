@@ -15,4 +15,5 @@
   <link rel="stylesheet" href="{{ asset('stisla') }}/css/style.css">
   <link rel="stylesheet" href="{{ asset('stisla') }}/css/components.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('datatables') }}/datatables.min.css"/>
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
   @stack('css')

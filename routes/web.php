@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\Config\WebConfigController;
 use App\Http\Controllers\Backend\Master\CategoryController;
+use App\Http\Controllers\Backend\Master\OutletController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,16 @@ Route::prefix('app')->group(function () {
                 Route::get('/edit/{id}',[CategoryController::class,'edit'])->name('edit');
                 Route::post('/update/{id}',[CategoryController::class,'update'])->name('update');
                 Route::get('/show/{id}',[CategoryController::class,'show'])->name('show');
+            });
+
+            Route::prefix('outlet')->name('outlet.')->group(function(){
+                Route::get('/',[OutletController::class,'index'])->name('index');
+                Route::get('/create',[OutletController::class,'create'])->name('create');
+                Route::post('/create',[OutletController::class,'store'])->name('store');
+                Route::get('/delete/{id}',[OutletController::class,'delete'])->name('delete');
+                Route::get('/edit/{id}',[OutletController::class,'edit'])->name('edit');
+                Route::post('/update/{id}',[OutletController::class,'update'])->name('update');
+                Route::get('/show/{id}',[OutletController::class,'show'])->name('show');
             });
 
         });

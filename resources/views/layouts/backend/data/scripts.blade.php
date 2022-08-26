@@ -6,7 +6,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script type="text/javascript" src="{{ asset('datatables') }}/datatables.min.js"></script>
-
+  <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+  <script src="/vendor/datatables/buttons.server-side.js"></script>
   <script src="{{ asset('stisla') }}/js/stisla.js"></script>
 
   <!-- JS Libraies -->
@@ -27,6 +28,21 @@
       });
     })
     
+    function hapus(url){
+      swal({
+        title: "{{ __('message.dialog_title') }}",
+        text: "{{ __('message.dialog_delete') }}",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location.href = url;
+        }
+      });
+    }
+
     $('.btn-delete').click(function(e) {
       e.preventDefault();
       var url = $(this).attr('href');

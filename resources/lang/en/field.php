@@ -6,7 +6,7 @@ return [
     'join_at' => 'Join At',
     'slug' => 'Slug',
     'action' => 'Action',
-    'thumbnails' => 'Thumbnails',
+    'image' => 'Image',
     'created_at' => 'Created At',
     'price' => 'Price',
     'description' => 'Description',
@@ -16,7 +16,11 @@ return [
 
     // Product
     'product_name' => 'Product Name',
-    
+
+    // Otlet
+    'outlet_name' => 'Outlet Name',
+    'outlet_address' => 'Outlet Address',
+
 
     // Order
     'order_invoice' => 'Invoice',

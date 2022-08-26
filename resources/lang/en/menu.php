@@ -5,6 +5,7 @@ return [
     'category'          => 'Category',
     'product'          => 'Product',
     'customer'          => 'Customer',
+    'outlet'            => 'Outlet',
 
     // Setting
     'setting'           => 'Settings',
