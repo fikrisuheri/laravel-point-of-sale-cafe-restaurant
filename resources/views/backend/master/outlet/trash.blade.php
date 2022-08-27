@@ -1,10 +1,9 @@
 @extends('layouts.backend.app')
 @section('content')
     @component('components.card.card-primary')
-        @slot('title', __('text.data_outlet'))
+        @slot('title', __('text.trash'))
         @slot('action')
-        <x-button.button-icon :title="__('button.trash')" :route="route('master.outlet.trash')" type="btn-danger" icon="fa fa-trash" />
-        <x-button.button-icon :title="__('button.add')" :route="route('master.outlet.create')" type="btn-primary" icon="fa fa-plus" />
+        <x-button.button-icon :title="__('button.back')" :route="route('master.outlet.index')" type="btn-primary" icon="fa fa-arrow-left" />
         @endslot
         @slot('body')
             {!! $dataTable->table(['class' => 'table table-striped']) !!}

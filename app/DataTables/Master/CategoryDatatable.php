@@ -43,11 +43,16 @@ class CategoryDatatable extends DataTable
                 'icon'  => 'fa fa-trash',
                 'route' => route('master.category.delete', $id)
             ],
-            // [
-            //     'title' => __('button.restore'),
-            //     'icon'  => 'fa fa-undo',
-            //     'route' => route('master.category.restore', $id)
-            // ],
+            [
+                'title' => __('button.restore'),
+                'icon'  => 'fa fa-undo',
+                'route' => route('master.category.restore', $id)
+            ],
+            [
+                'title' => __('button.delete_permanent'),
+                'icon'  => 'fa fa-trash',
+                'route' => route('master.category.hard-delete', $id)
+            ],
         ];
     }
 

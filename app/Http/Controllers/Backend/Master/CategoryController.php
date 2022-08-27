@@ -63,7 +63,26 @@ class CategoryController extends Controller
 
     public function restore($id)
     {
+        try {
         $this->category->restoretrash($id);
         return redirect()->route('master.category.index')->with('success',__('message.restore'));
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', ($th->getMessage()));
+        }
+    }
+
+    public function trash(CategoryDatatable $datatable)
+    {
+        return $datatable->addScope(new CategoryScope)->render('backend.master.category.trash');
+    }
+
+    public function hardDelete($id)
+    {
+        try {
+            $this->category->hardDelete($id, true,'image');
+            return redirect()->back()->with('success', __('message.harddelete'));
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', ($th->getMessage()));
+        }
     }
 }

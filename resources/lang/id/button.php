@@ -9,5 +9,7 @@ return [
     'cancel'           => 'Batalkan',
     'select'           => 'Pilih',
     'back'             => 'Kembali',
-    'restore'          => 'Pulihkan'
+    'restore'          => 'Pulihkan',
+    'trash'            => 'Lihat Sampah',
+    'delete_permanent' => 'Hapus Permanen'
 ];

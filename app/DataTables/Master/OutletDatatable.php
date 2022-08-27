@@ -17,7 +17,7 @@ class OutletDatatable extends DataTable
             ->eloquent($query)
             ->addColumn('action', function ($query) {
                 $data['action'] = $this->actions($query);
-                return view('components.actions.button-action', compact('data'))->render();
+                return view('components.actions.button-action', compact('data','query'))->render();
             })
             ->rawColumns(['action']);
     }
@@ -39,6 +39,16 @@ class OutletDatatable extends DataTable
                 'title' => __('button.delete'),
                 'icon'  => 'fa fa-trash',
                 'route' => route('master.outlet.delete', $id)
+            ],
+            [
+                'title' => __('button.restore'),
+                'icon'  => 'fa fa-undo',
+                'route' => route('master.outlet.restore', $id)
+            ],
+            [
+                'title' => __('button.delete_permanent'),
+                'icon'  => 'fa fa-trash',
+                'route' => route('master.outlet.hard-delete', $id)
             ],
         ];
     }

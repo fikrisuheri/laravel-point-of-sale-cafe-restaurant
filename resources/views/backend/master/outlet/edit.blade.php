@@ -3,20 +3,20 @@
     <div class="row">
         <div class="col-12">
             @component('components.backend.card.card-form')
-                @slot('action', Route('master.category.update',$data['category']->id))
+                @slot('action', Route('master.outlet.update',$data['outlet']->id))
                 @slot('content')
 
-                    <x-forms.input name="name" id="name" :label="__('field.category_name')" :isRequired="true" value="{{ $data['category']->name }}"/>
+                <x-forms.input name="name" id="name" :label="__('field.outlet_name')" :value="$data['outlet']->name" :isRequired="true" />
 
-                    <x-forms.input name="slug" id="slug" :label="__('field.slug')" :isRequired="true" readonly value="{{ $data['category']->slug }}"/>
-                    <x-forms.input type="file" name="thumbnails" id="thumbnails" :label="__('field.thumbnails')" />
-                    <p>Kosongkan jika tidak akan mengubah thumbnails.</p>
+                <x-forms.input name="address" id="address" :label="__('field.outlet_address')" :value="$data['outlet']->address" :isRequired="true" />
 
-                    <div class="text-right">
-                        <a href="{{ Route('master.category.index') }}" class="btn btn-secondary " href="#">{{ __('button.cancel') }}</a>
-                        <button type="submit" class="btn btn-primary " href="#">{{ __('button.save') }}</button>
-                    </div>
+                <x-forms.input type="textarea" name="description" id="description" :value="$data['outlet']->description" :label="__('field.description')" :isRequired="true" />
+                
 
+                <div class="text-right">
+                    <a href="{{ Route('master.outlet.index') }}" class="btn btn-secondary " href="#">{{ __('button.cancel') }}</a>
+                    <button type="submit" class="btn btn-primary " href="#">{{ __('button.save') }}</button>
+                </div>
                 @endslot
             @endcomponent
         </div>

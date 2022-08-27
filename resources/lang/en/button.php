@@ -9,5 +9,7 @@ return [
     'cancel'            => 'Cancel',
     'select'            => 'Select',
     'back'              => 'Back',
-    'restore'           => 'Restore'
+    'restore'           => 'Restore',
+    'trash'             => 'View Trash',
+    'delete_permanent'  => 'Delete Permanently'
 ];

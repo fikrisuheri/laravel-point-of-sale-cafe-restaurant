@@ -3,7 +3,8 @@
     @component('components.card.card-primary')
         @slot('title', __('text.data_category'))
         @slot('action')
-            <a href="{{ route('master.category.create') }}" class="btn btn-primary">{{ __('button.add') }}</a>
+        <x-button.button-icon :title="__('button.trash')" :route="route('master.category.trash')" type="btn-danger" icon="fa fa-trash" />
+        <x-button.button-icon :title="__('button.add')" :route="route('master.category.create')" type="btn-primary" icon="fa fa-plus" />
         @endslot
         @slot('body')
             {!! $dataTable->table(['class' => 'table table-striped']) !!}

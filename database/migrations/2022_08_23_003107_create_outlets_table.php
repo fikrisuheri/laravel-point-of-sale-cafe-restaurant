@@ -17,6 +17,7 @@ class CreateOutletsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('address');
+            $table->text('description');
             $table->softDeletes();
             $table->timestamps();
         });
