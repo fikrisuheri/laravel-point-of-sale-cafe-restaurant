@@ -2,6 +2,7 @@
 return [
     // GLobal Field
     'name' => 'Nama',
+    'role' => 'Hak Akses',
     'email' => 'Email',
     'join_at' => 'Bergabung',
     'slug' => 'Slug',
@@ -20,6 +21,9 @@ return [
     // Otlet
     'outlet_name' => 'Nama Toko',
     'outlet_address' => 'Alamat Toko',
+    
+    // User
+    'user_outlet' => 'Toko',
 
     // Order
     'order_invoice' => 'Invoice',

@@ -1,4 +1,4 @@
-        <div class="card">
+        <div class="card card-primary">
             <div class="card-body">
                 <form action="{{ $action }}" method="POST" enctype="multipart/form-data">
                     @csrf

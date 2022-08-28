@@ -36,7 +36,7 @@ class OutletController extends Controller
     public function delete($id)
     {
         $this->outlet->softDelete($id);
-        return redirect()->back()->with('success',__('message.delete'));
+        return redirect()->back()->with('success',__('message.softdelete'));
     }
 
     public function edit($id)

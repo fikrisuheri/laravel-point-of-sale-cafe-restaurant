@@ -19,6 +19,7 @@ class CategoryController extends Controller
 
     public function index(CategoryDatatable $datatable)
     {
+        
         return $datatable->render('backend.master.category.index');
     }
 
@@ -36,7 +37,7 @@ class CategoryController extends Controller
     public function delete($id)
     {
         $this->category->softDelete($id);
-        return redirect()->back()->with('success',__('message.delete'));
+        return redirect()->back()->with('success',__('message.softdelete'));
     }
 
     public function edit($id)

@@ -2,6 +2,7 @@
 return [
     // GLobal Field
     'name' => 'Name',
+    'role' => 'Role',
     'email' => 'Email',
     'join_at' => 'Join At',
     'slug' => 'Slug',
@@ -21,6 +22,8 @@ return [
     'outlet_name' => 'Outlet Name',
     'outlet_address' => 'Outlet Address',
 
+    // User
+    'user_outlet' => 'Outlet User',
 
     // Order
     'order_invoice' => 'Invoice',

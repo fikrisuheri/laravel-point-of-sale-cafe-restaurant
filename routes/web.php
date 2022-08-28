@@ -3,6 +3,8 @@
 use App\Http\Controllers\Backend\Config\WebConfigController;
 use App\Http\Controllers\Backend\Master\CategoryController;
 use App\Http\Controllers\Backend\Master\OutletController;
+use App\Http\Controllers\Backend\Master\ProductController;
+use App\Http\Controllers\Backend\Master\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +55,32 @@ Route::prefix('app')->group(function () {
                 Route::get('/trash',[OutletController::class,'trash'])->name('trash');
                 Route::get('/restore/{id}',[OutletController::class,'restore'])->name('restore');
                 Route::get('/hard-delete/{id}',[OutletController::class,'hardDelete'])->name('hard-delete');
+            });
+
+            Route::prefix('product')->name('product.')->group(function(){
+                Route::get('/',[ProductController::class,'index'])->name('index');
+                Route::get('/create',[ProductController::class,'create'])->name('create');
+                Route::post('/create',[ProductController::class,'store'])->name('store');
+                Route::get('/delete/{id}',[ProductController::class,'delete'])->name('delete');
+                Route::get('/edit/{id}',[ProductController::class,'edit'])->name('edit');
+                Route::post('/update/{id}',[ProductController::class,'update'])->name('update');
+                Route::get('/show/{id}',[ProductController::class,'show'])->name('show');
+                Route::get('/trash',[ProductController::class,'trash'])->name('trash');
+                Route::get('/restore/{id}',[ProductController::class,'restore'])->name('restore');
+                Route::get('/hard-delete/{id}',[ProductController::class,'hardDelete'])->name('hard-delete');
+            });
+
+            Route::prefix('user')->name('user.')->group(function(){
+                Route::get('/',[UserController::class,'index'])->name('index');
+                Route::get('/create',[UserController::class,'create'])->name('create');
+                Route::post('/create',[UserController::class,'store'])->name('store');
+                Route::get('/delete/{id}',[UserController::class,'delete'])->name('delete');
+                Route::get('/edit/{id}',[UserController::class,'edit'])->name('edit');
+                Route::post('/update/{id}',[UserController::class,'update'])->name('update');
+                Route::get('/show/{id}',[UserController::class,'show'])->name('show');
+                Route::get('/trash',[UserController::class,'trash'])->name('trash');
+                Route::get('/restore/{id}',[UserController::class,'restore'])->name('restore');
+                Route::get('/hard-delete/{id}',[UserController::class,'hardDelete'])->name('hard-delete');
             });
 
         });
