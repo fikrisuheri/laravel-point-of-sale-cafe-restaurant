@@ -5,10 +5,9 @@
             @component('components.backend.card.card-form')
                 @slot('action', Route('master.product.store'))
                 @slot('content')
-                    <x-forms.select name="categorie_id" id="categorie_id" :label="__('field.category_name')">
-                        @foreach ($data['categories'] as $categori)
-                            <option value="{{ $categori->id }}">{{ $categori->name }}</option>
-                        @endforeach
+                    <x-forms.select name="role" id="role" :label="__('field.category_name')">
+                            <option value="admin">Admin</option>
+                            <option value="cashier">Kasir</option>
                     </x-forms.select>
                     <x-forms.input name="name" id="name" :label="__('field.product_name')" :isRequired="true" />
                     <x-forms.input type="number" name="price" id="price" :label="__('field.price')" :isRequired="true" />
