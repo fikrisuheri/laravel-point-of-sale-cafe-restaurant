@@ -7,4 +7,5 @@ return [
    'data_outlet' => 'Data Toko',
    'data_product' => 'Data Produk',
    'data_product' => 'Data Pengguna',
+   'data_order' => 'Data Riwayat Transaksi',
 ];

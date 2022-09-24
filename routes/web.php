@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Backend\Config\WebConfigController;
+use App\Http\Controllers\Backend\Feature\CashierController;
+use App\Http\Controllers\Backend\Feature\OrderController;
 use App\Http\Controllers\Backend\Master\CategoryController;
 use App\Http\Controllers\Backend\Master\OutletController;
 use App\Http\Controllers\Backend\Master\ProductController;
@@ -82,6 +84,30 @@ Route::prefix('app')->group(function () {
                 Route::get('/hard-delete/{id}',[UserController::class,'hardDelete'])->name('hard-delete');
             });
 
+        });
+
+        Route::prefix('feature')->name('feature.')->group(function(){
+            
+
+            Route::prefix('order')->name('order.')->group(function(){
+                Route::get('/',[OrderController::class,'index'])->name('index');
+                Route::get('/create',[OrderController::class,'create'])->name('create');
+                Route::post('/create',[OrderController::class,'store'])->name('store');
+                Route::get('/delete/{id}',[OrderController::class,'delete'])->name('delete');
+                Route::get('/edit/{id}',[OrderController::class,'edit'])->name('edit');
+                Route::post('/update/{id}',[OrderController::class,'update'])->name('update');
+                Route::get('/show/{id}',[OrderController::class,'show'])->name('show');
+                Route::get('/trash',[OrderController::class,'trash'])->name('trash');
+                Route::get('/restore/{id}',[OrderController::class,'restore'])->name('restore');
+                Route::get('/hard-delete/{id}',[OrderController::class,'hardDelete'])->name('hard-delete');
+            });
+
+            Route::prefix('cashier')->name('cashier.')->group(function(){
+
+                Route::get('/',[CashierController::class,'index'])->name('index');
+
+            });
+            
         });
 
         

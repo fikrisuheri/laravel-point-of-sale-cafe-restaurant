@@ -19,6 +19,7 @@ return [
     'product_name' => 'Nama Produk',
 
     // Otlet
+    'outlet'       => 'Toko',
     'outlet_name' => 'Nama Toko',
     'outlet_address' => 'Alamat Toko',
     
@@ -30,4 +31,5 @@ return [
     'order_customer' => 'Nama Pemesan',
     'order_total' => 'Total Pembayaran',
     'order_status' => 'Status Pesanan',
+    'order_cashier' => 'Kasir',
 ];

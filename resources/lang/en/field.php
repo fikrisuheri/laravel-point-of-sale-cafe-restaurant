@@ -19,6 +19,7 @@ return [
     'product_name' => 'Product Name',
 
     // Otlet
+    'outlet'       => 'Outlet',
     'outlet_name' => 'Outlet Name',
     'outlet_address' => 'Outlet Address',
 
@@ -30,4 +31,5 @@ return [
     'order_customer' => 'Customer Name',
     'order_total' => 'Total Pay',
     'order_status' => 'Order Status',
+    'order_cashier' => 'Cashier',
 ];
